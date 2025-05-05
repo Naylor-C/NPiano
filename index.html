@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Piano</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .piano {
+            display: flex;
+            position: relative;
+        }
+        
+        .tecla-branca {
+            width: 60px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        .tecla-branca:active, .tecla-branca.pressed {
+            background-color: #ddd;
+        }
+        
+        .tecla-preta {
+            width: 40px;
+            height: 120px;
+            background-color: black;
+            position: absolute;
+            border-radius: 0 0 5px 5px;
+            cursor: pointer;
+            z-index: 1;
+            user-select: none;
+        }
+        
+        .tecla-preta:active, .tecla-preta.pressed {
+            background-color: #333;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>Simulador de Piano</h1>
+        <button id="toggleSounds">Ativar/Desativar Sons</button>
+        <p>Teclas do computador: A, S, D, F, G, H, J, K, L</p>
+    </div>
+    
+    <div class="piano" id="piano">
+        <!-- Teclas brancas serão adicionadas via JavaScript -->
+    </div>
+
+    <script src="piano.js"></script>
+</body>
+</html>
